@@ -1,20 +1,29 @@
 package by.egar.shop.model;
 
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
 /**
  * @author Denis Khalaev
  */
+@Entity
+@Table(name = "product")
 public class Product {
 
+    @Id
+    @Column(name = "id_product")
     private String idProduct;
+    @Column(name = "name_product")
     private String nameProduct;
+    @Column(name = "description")
     private String description;
+    @Column(name = "date")
     private LocalDate date;
+    @Column(name = "price")
     private int price;
-
+    @OneToMany(mappedBy = "product")
     private List<DetailOrder> detailOrderList;
 
     public String getIdProduct() {
@@ -72,13 +81,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "idProduct='" + idProduct + '\'' +
-                ", nameProduct='" + nameProduct + '\'' +
-                ", description='" + description + '\'' +
-                ", date=" + date +
-                ", price=" + price +
-                ", detailOrderList=" + detailOrderList +
-                '}';
+        return idProduct + " " + nameProduct + " " + description + " " + date + " " + price;
     }
 }

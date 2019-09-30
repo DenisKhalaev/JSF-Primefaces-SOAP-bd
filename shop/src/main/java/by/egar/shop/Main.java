@@ -14,10 +14,10 @@ public class Main {
 
 
     public static void main(String[] args) throws JAXBException, FileNotFoundException {
-//        ProductXMLService productXMLService = new ProductXMLServiceImpl();
-//        for (Product product : productXMLService.getProductListFromXML()) {
-//            System.out.println(product);
-//        }
+        ProductXMLService productXMLService = new ProductXMLServiceImpl();
+        for (Product product : productXMLService.getProductListFromXML()) {
+            System.out.println(product);
+        }
     }
 
 }

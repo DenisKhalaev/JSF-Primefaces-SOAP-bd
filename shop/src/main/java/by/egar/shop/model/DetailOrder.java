@@ -1,29 +1,35 @@
 package by.egar.shop.model;
 
 
+import javax.persistence.*;
 
 /**
  * @author Denis Khalaev
  */
-
+@Entity
+@Table(name = "product_detail_order")
 public class DetailOrder {
 
-
-    private long idDetail;
+    @Id
+    @Column(name = "id_detail_order")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long idDetailOrder;
+    @Column(name = "quantity")
     private int quantity;
 
-
+    @ManyToOne
+    @JoinColumn(name = "product_id")
     private Product product;
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Orders order;
 
-
-    private Order order;
-
-    public long getIdDetail() {
-        return idDetail;
+    public long getIdDetailOrder() {
+        return idDetailOrder;
     }
 
-    public DetailOrder setIdDetail(long idDetail) {
-        this.idDetail = idDetail;
+    public DetailOrder setIdDetailOrder(long idDetailOrder) {
+        this.idDetailOrder = idDetailOrder;
         return this;
     }
 
@@ -45,11 +51,11 @@ public class DetailOrder {
         return this;
     }
 
-    public Order getOrder() {
+    public Orders getOrder() {
         return order;
     }
 
-    public DetailOrder setOrder(Order order) {
+    public DetailOrder setOrder(Orders order) {
         this.order = order;
         return this;
     }

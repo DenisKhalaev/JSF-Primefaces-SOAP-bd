@@ -7,38 +7,32 @@
       xmlns:p="http://primefaces.org/ui">
 <f:view>
     <h:head>
-        <title>Order List</title>
-
+        <title>Product list</title>
     </h:head>
-
     <h:body>
-
         <h:form>
             <p:outputLabel id="labelId" title="time" value="#{timeBean.dateTime}"/>
             <p:poll interval="5" listener="#{timeBean.updateDateTime}" update="labelId"/>
         </h:form>
         <br/>
-        <p:button value="Product List" href="/product"/>
+        <p:button value="Order List" href="/"/>
         <br/>
         <br/>
-        <p:dataTable var="order" value="#{orderList}">
-            <p:column headerText="Id">
-                <h:outputText value="#{order.idOrder}"/>
+        <p:dataTable var="product" value="#{productList}">
+            <p:column headerText="Product ID">
+                <h:outputText value="#{product.idProduct}"/>
             </p:column>
-            <p:column headerText="Name client">
-                <h:outputText value="#{order.nameClient}"/>
+            <p:column headerText="Product name">
+                <h:outputText value="#{product.nameProduct}"/>
             </p:column>
-            <p:column headerText="Address">
-                <h:outputText value="#{order.addressClient}"/>
+            <p:column headerText="Description">
+                <h:outputText value="#{product.description}"/>
             </p:column>
-            <p:column headerText="Date">
-                <h:outputText value="#{order.dateOrder}"/>
+            <p:column headerText="Production date">
+                <h:outputText value="#{product.date}"/>
             </p:column>
-            <p:column headerText="Summa">
-                <h:outputText value="#{order.sumOrder}"/>
-            </p:column>
-            <p:column headerText="Options">
-                <p:button value="View order" href="/order/#{order.idOrder}"/>
+            <p:column headerText="Price by piece">
+                <h:outputText value="#{product.price}"/>
             </p:column>
         </p:dataTable>
     </h:body>

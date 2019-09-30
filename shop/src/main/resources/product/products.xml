@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <products>
     <product>
-        <id>1</id>
-        <name>Cookies1</name>
-        <description>very good cookies 1</description>
+        <id>8f4do</id>
+        <name>keyboard</name>
+        <description>a4tesh</description>
         <date>2/2/2019</date>
+        <price>15</price>
+    </product>
+    <product>
+        <id>233eo5g</id>
+        <name>phone</name>
+        <description>apple</description>
+        <date>15/9/2018</date>
+        <price>999</price>
+    </product>
+    <product>
+        <id>3ws37d9se</id>
+        <name>book</name>
+        <description>java</description>
+        <date>5/12/2017</date>
         <price>10</price>
     </product>
     <product>
-        <id>1</id>
-        <name>Cookies1</name>
-        <description>very good cookies 1</description>
-        <date>15/9/2019</date>
-        <price>10</price>
-    </product>
-    <product>
-        <id>1</id>
-        <name>Cookies1</name>
-        <description>very good cookies 1</description>
-        <date>5/12/2019</date>
-        <price>10</price>
+        <id>4w4sd23e</id>
+        <name>knife</name>
+        <description>Valerian steel</description>
+        <date>31/12/2017</date>
+        <price>1022</price>
     </product>
 </products>
