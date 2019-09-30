@@ -31,19 +31,14 @@ public class ShopController {
         this.productService = productService;
         this.orderService = orderService;
         this.detailOrderService = detailOrderService;
-        this.productService.addProductListFromXML();
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView allProducts() {
-        List<Product> productList = productService.getProductList();
         List<Orders> orderList = orderService.getOrderList();
-        List<DetailOrder> detailOrder = detailOrderService.getAllDetailOrderListByOrder(1);
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("index");
         modelAndView.addObject("orderList", orderList);
-        modelAndView.addObject("productList", productList);
-        modelAndView.addObject("detailOrder", detailOrder);
         return modelAndView;
     }
 
@@ -64,6 +59,16 @@ public class ShopController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("product");
         modelAndView.addObject("productList", productList);
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/xml", method = RequestMethod.GET)
+    public ModelAndView addProductFromXml() throws JAXBException {
+        this.productService.addProductListFromXML();
+        List<Orders> orderList = orderService.getOrderList();
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("index");
+        modelAndView.addObject("orderList", orderList);
         return modelAndView;
     }
 }
